@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="src/cadastro.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela Cadastro</title>
+  </head>
+  <body>
+
+    <div class="btn-voltar">
+        <a class="voltar" type="submit" href=index.html>Voltar</a>
+      </div>
+
+    <div class="CadastroContainer">
+        <h1>Cadastro</h1>
+
+        <div class="Dados">
+            <div class="linha">
+              <div class="campo">
+                <label for="name">Nome</label>
+                <input type="text" placeholder="Seu nome completo">
+              </div>
+              <div class="campo">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" placeholder="000.000.000-00" maxlength="14">
+              </div>
+            </div>
+          
+            <div class="linha">
+              <div class="campo">
+                <label for="mail">E-mail</label>
+                <input type="text" placeholder="Seu E-mail">
+              </div>
+              <div class="campo">
+                <label for="date">Data de nascimento</label>
+                <input type="date">
+              </div>
+            </div>
+          
+            <div class="linha">
+              <div class="campo">
+                <label for="senha">Senha</label>
+                <input type="password" placeholder="Sua senha">
+              </div>
+              <div class="campo">
+                <label for="confirma">Confirme sua senha</label>
+                <input type="password" placeholder="Confirme sua senha">
+              </div>
+            </div>
+          </div>
+          
+    </div>
+
+    <script type="module" src="/src/cadastro.js"></script>
+</body>
+</html>

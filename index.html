@@ -4,10 +4,36 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue</title>
+    <title>Tela Login</title>
   </head>
   <body>
-    <div id="app"></div>
+
+    <div class="LoginContainer">
+        <h1>Login</h1>
+
+      <div class="Dados">
+
+        <label for="cpf">E-mail</label>
+        <input type="CPF" placeholder="Seu E-mail">
+
+        <div class="label-forgot-wrapper">
+        <label for="cpf">Senha</label>
+        <a href="{{ route('login.esqueci_senha_enviar_email') }}" class="forgot-link">Esqueci a Senha</a>
+      </div>
+        <input type="CPF" placeholder="Sua senha">
+      </div>
+
+      <div class="btn-entrar">
+        <button class="entrar" type="submit">Entrar</button>
+      </div>
+
+    </div>
+
+    <div class="TextCadastro">
+      <h4>Ainda não possui uma conta ?</h4>
+       <a href=cadastro.html class="forgot-link">Cadastre-se</a>
+    </div>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

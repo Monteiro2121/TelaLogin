@@ -1,9 +1,10 @@
+<!-- App.vue -->
 <template>
   <div class="campo">
     <label for="cpf">CPF</label>
     <input
-      id="cpf"
       type="text"
+      id="cpf"
       v-model="cpf"
       @input="mascararCPF"
       placeholder="000.000.000-00"
@@ -13,27 +14,24 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const cpf = ref('');
+const cpf = ref('')
 
 function mascararCPF() {
-  let val = cpf.value.replace(/\D/g, ''); // Remove tudo que não é número
+  let valor = cpf.value.replace(/\D/g, '') // Remove tudo que não for número
+  valor = valor.slice(0, 11) // Limita a 11 dígitos
 
-  if (val.length > 11) val = val.slice(0, 11);
+  if (valor.length > 9) {
+    valor = valor.replace(/(\d{3})(\d{3})(\d{3})(\d{1,2})/, '$1.$2.$3-$4')
+  } else if (valor.length > 6) {
+    valor = valor.replace(/(\d{3})(\d{3})(\d{1,3})/, '$1.$2.$3')
+  } else if (valor.length > 3) {
+    valor = valor.replace(/(\d{3})(\d{1,3})/, '$1.$2')
+  }
 
-  val = val.replace(/(\d{3})(\d)/, '$1.$2');
-  val = val.replace(/(\d{3})(\d)/, '$1.$2');
-  val = val.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
-
-  cpf.value = val;
+  cpf.value = valor
 }
 </script>
 
-<style scoped>
-.campo input {
-  padding: 8px;
-  font-size: 16px;
-  width: 200px;
-}
-</style>
+

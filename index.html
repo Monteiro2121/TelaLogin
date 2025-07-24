@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -9,31 +9,55 @@
   <body>
 
     <div class="LoginContainer">
-        <h1>Login</h1>
+      <h1>Login</h1>
 
       <div class="Dados">
+        <label for="email">E-mail</label>
+        <input type="text" id="email" placeholder="Seu E-mail" />
+        <p id="erro-email" style="color: red; font-size: 14px; margin-top: 4px; background-color: transparent; margin-bottom: -18px;"></p>
 
-        <label for="cpf">E-mail</label>
-        <input type="CPF" placeholder="Seu E-mail">
-
-        <div class="label-forgot-wrapper">
-        <label for="cpf">Senha</label>
-        <a href="{{ route('login.esqueci_senha_enviar_email') }}" class="forgot-link">Esqueci a Senha</a>
-      </div>
-        <input type="CPF" placeholder="Sua senha">
+        <div class="label-forgot-wrapper" style="display: flex; justify-content: space-between; align-items: center;">
+          <label for="senha">Senha</label>
+          <a href="{{ route('login.esqueci_senha_enviar_email') }}" class="forgot-link">Esqueci a Senha</a>
+        </div>
+        <input type="password" id="senha" placeholder="Sua senha" />
       </div>
 
       <div class="btn-entrar">
         <button class="entrar" type="submit">Entrar</button>
       </div>
-
     </div>
 
     <div class="TextCadastro">
-      <h4>Ainda não possui uma conta ?</h4>
-       <a href=cadastro.html class="forgot-link">Cadastre-se</a>
+      <h4>Ainda não possui uma conta?</h4>
+      <a href="cadastro.html" class="forgot-link">Cadastre-se</a>
     </div>
 
     <script type="module" src="/src/main.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Mostrar aviso de sucesso
+        const sucesso = localStorage.getItem('cadastroSucesso');
+        const msgSucesso = document.getElementById('mensagem-sucesso');
+        if (sucesso === 'true') {
+          msgSucesso.textContent = 'Cadastro realizado com sucesso! Faça login com seu e-mail.';
+          localStorage.removeItem('cadastroSucesso');
+        }
+
+        // Validação de e-mail
+        const inputEmail = document.getElementById('email');
+        const erro = document.getElementById('erro-email');
+
+        inputEmail.addEventListener('blur', () => {
+          const valor = inputEmail.value.trim();
+          if (valor && !valor.includes('@')) {
+            erro.textContent = 'Formato de e-mail inválido.';
+          } else {
+            erro.textContent = '';
+          }
+        });
+      });
+    </script>
   </body>
 </html>

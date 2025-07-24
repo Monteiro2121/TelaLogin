@@ -5,7 +5,7 @@
 .CadastroContainer {
     background-color: white;
     width: 650px;
-    height: 350px; 
+    height: 410px; 
     border: 1px solid rgba(221, 221, 221, 0.61); 
     box-shadow: 2px;
     margin: 180px auto; 
@@ -83,6 +83,28 @@
 }
 
 .voltar:hover {
+  background-color: #3874bc;
+  color: white;
+}
+
+.btn-entrar{
+  background-color: white;
+  margin: 16px auto 0; 
+}
+
+.entrar {
+  cursor: pointer;
+  border-radius: 4px 0px;
+  width: 300px;
+  height: 35px;
+  background-color: #2162a7;
+  color: white;
+  border: none;
+  margin: 0 auto;
+  display: block;
+}
+
+.entrar:hover {
   background-color: #3874bc;
   color: white;
 }

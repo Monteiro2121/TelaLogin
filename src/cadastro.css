@@ -8,7 +8,7 @@
     height: 410px; 
     border: 1px solid rgba(221, 221, 221, 0.61); 
     box-shadow: 2px;
-    margin: 180px auto; 
+    margin: 55px auto; 
     padding: 20px;
     border-radius: 3px; 
   }
@@ -67,7 +67,7 @@
 }
 
 .btn-voltar{
-  margin: 35px auto 0; 
+  margin: 90px auto 0; 
 }
 
 .voltar {
@@ -89,7 +89,7 @@
 
 .btn-entrar{
   background-color: white;
-  margin: 16px auto 0; 
+  margin: 28px auto 0; 
 }
 
 .entrar {
@@ -107,4 +107,24 @@
 .entrar:hover {
   background-color: #3874bc;
   color: white;
+}
+
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-container input {
+  width: 100%;
+  padding-right: 35px; 
+  box-sizing: border-box;
+}
+
+.input-container svg {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #888;
 }

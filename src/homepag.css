@@ -1,0 +1,29 @@
+*{
+    background-color: #f6f8fb;
+  }
+
+.btn-voltar{
+    margin: 15px auto 0; 
+  }
+  
+.voltar {
+    cursor: pointer;
+    border-radius: 4px 0px;
+    width: 300px;
+    height: 35px;
+    background-color: #2162a7;
+    color: white;
+    border: none;
+    margin: 0 auto;
+    display: block;
+  }
+  
+.voltar:hover {
+    background-color: #3874bc;
+    color: white;
+  }
+
+  .info{
+    text-align: center;
+    margin-top: 5%;
+  }
